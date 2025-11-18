@@ -1,145 +1,477 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
   <title>Global Best Products LLC | Innovación Industrial</title>
-  <meta name="description" content="Soluciones de innovación tecnológica y comercialización global. Presencia en Florida (EE.UU.), Hidalgo (TX) y Monterrey (NL).">
-  <link rel="icon" href="/assets/favicon.png" />
-  <meta property="og:title" content="Global Best Products LLC | Innovación Industrial">
-  <meta property="og:description" content="Eficiencia, ahorro y escalamiento. IA, energía inteligente y optimización operativa.">
-  <meta property="og:image" content="/assets/og-image.jpg">
-  <meta property="og:type" content="website">
 
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO básico -->
+  <meta
+    name="description"
+    content="Global Best Products LLC implementa soluciones tecnológicas de alto impacto en energía, logística y manufactura. Presencia en Estados Unidos y México."
+  />
+
+  <!-- Open Graph para compartir -->
+  <meta property="og:title" content="Global Best Products LLC | Innovación Industrial" />
+  <meta
+    property="og:description"
+    content="Eficiencia, ahorro y escalamiento para la industria. Soluciones en energía, automatización y comercialización global."
+  />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gbestproducts.com" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#B98D2D',
-            ink: '#1F2937',
-            steel: '#0B1420',
-            titan: '#4B5563'
+            primary: "#D4AF37",  // dorado
+            titan: "#0B1220",    // fondo oscuro industrial
+            steel: "#1F2937",    // gris acero
           },
-          boxShadow: {
-            soft: '0 10px 30px rgba(0,0,0,.08)'
-          }
-        }
-      }
-    }
+        },
+      },
+    };
   </script>
+
   <style>
-    .hero-bg {
-      background: radial-gradient(60% 60% at 70% 30%, rgba(185,141,45,0.15) 0%, rgba(11,20,32,0) 60%),
-                  radial-gradient(40% 40% at 15% 80%, rgba(255,255,255,0.08) 0%, rgba(11,20,32,0) 70%),
-                  linear-gradient(180deg, #0B1420 0%, #0E1726 60%, #101A2B 100%);
+    /* Fondo degradado industrial */
+    body {
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(212, 175, 55, 0.18), transparent 55%),
+                  radial-gradient(900px 400px at 10% 110%, rgba(99, 102, 241, 0.16), transparent 60%),
+                  #020617;
+      color: #e5e7eb;
+    }
+
+    .glass {
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.82)
+      );
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
+    }
+
+    .section-light {
+      background: radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 55%),
+                  #020617;
     }
   </style>
 </head>
-<body class="bg-steel text-white selection:bg-primary/30 selection:text-white">
-  <header class="sticky top-0 z-40 bg-steel/80 backdrop-blur border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Global Best Products LLC" class="logo">
-             onerror="this.src='/assets/logo.png'">
-        <span class="sr-only">Global Best Products LLC</span>
+
+<body class="min-h-screen flex flex-col">
+  <!-- Header / Navbar -->
+  <header class="w-full sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo + nombre -->
+      <a href="#top" class="flex items-center gap-3">
+        <img src="logo.png" alt="Global Best Products LLC" class="h-10 w-auto" />
+        <div class="hidden sm:flex flex-col leading-tight">
+          <span class="text-sm font-semibold tracking-[0.22em] text-slate-200">
+            GLOBAL BEST PRODUCTS LLC
+          </span>
+          <span class="text-[11px] text-slate-400">
+            Innovating Technology. Benefiting the World.
+          </span>
+        </div>
       </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-        <a href="#divisiones" class="hover:text-white">Divisiones</a>
-        <a href="#presencia" class="hover:text-white">Presencia</a>
-        <a href="#casos" class="hover:text-white">Casos</a>
-        <a href="#contacto" class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-ink font-semibold hover:brightness-110">
-          Contáctanos
-        </a>
+
+      <!-- Nav simple -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-200">
+        <a href="#divisiones" class="hover:text-primary transition-colors">Divisiones</a>
+        <a href="#presencia" class="hover:text-primary transition-colors">Presencia</a>
+        <a href="#casos" class="hover:text-primary transition-colors">Casos</a>
       </nav>
+
+      <!-- Botón principal -->
+      <a
+        href="#contacto"
+        class="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs sm:text-sm font-semibold text-titan shadow-lg shadow-yellow-900/40 hover:bg-yellow-400 transition"
+      >
+        Contáctanos
+      </a>
     </div>
   </header>
 
-  <section class="hero-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <p class="text-primary font-semibold tracking-widest uppercase">Innovación industrial</p>
-        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight text-white">
-          eficiencia, ahorro y<br/>escalamiento
-        </h1>
-        <p class="mt-4 text-gray-300 max-w-xl">
-          Desde 2019 implementamos soluciones de alto impacto en energía, logística y manufactura.
-          Binacional: EE.UU. y México.
-        </p>
-        <div class="mt-8">
-          <a href="#divisiones" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-ink font-semibold shadow-soft hover:brightness-110">
-            Explorar soluciones
-          </a>
-        </div>
-      </div>
+  <main id="top" class="flex-1">
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+      <div class="grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-10 items-center">
+        <!-- Texto principal -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.25em] text-primary mb-4">
+            INNOVACIÓN INDUSTRIAL
+          </p>
 
-      <div class="relative">
-        <div class="rounded-3xl bg-white/5 border border-white/10 shadow-soft overflow-hidden">
-          <img src="/assets/hero-bg.svg" alt="Visual industrial" class="w-full h-[320px] object-cover">
-        </div>
-      </div>
-    </div>
-  </section>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 leading-tight mb-4">
+            eficiencia, ahorro y<br />
+            <span class="text-primary">escalamiento</span>
+          </h1>
 
-  <section id="divisiones" class="bg-white text-ink">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-center text-3xl font-bold">Nuestras divisiones</h2>
-      <p class="text-center text-titan mt-2">Integramos IA, automatización y estrategia comercial para resultados medibles.</p>
+          <p class="text-sm sm:text-base text-slate-300 max-w-xl mb-6">
+            Desde 2019 implementamos soluciones tecnológicas de alto impacto en energía,
+            logística y manufactura. Operamos como un socio estratégico binacional, con presencia
+            en Estados Unidos (EE.UU.) y México.
+          </p>
 
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-gray-200 p-6 hover:shadow-soft transition">
-          <div class="h-40 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center">
-            <img src="/assets/industrial-grid.svg" alt="Comercialización Global" class="w-full h-full object-cover">
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2 mb-8">
+            <li>• Compensación de pérdidas eléctricas y ahorro energético.</li>
+            <li>• Automatización e IA aplicada a procesos operativos.</li>
+            <li>• Comercialización global de productos tecnológicos de alto valor.</li>
+          </ul>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a
+              href="#divisiones"
+              class="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-xs sm:text-sm font-semibold text-titan shadow-lg shadow-yellow-900/40 hover:bg-yellow-400 transition"
+            >
+              Explorar soluciones
+            </a>
+
+            <span class="text-[11px] sm:text-xs text-slate-400">
+              Proyectos diseñados para <span class="text-slate-200 font-semibold">ROI medible</span> y
+              continuidad operativa.
+            </span>
           </div>
-          <h3 class="mt-4 font-semibold text-lg">Comercialización Global</h3>
-          <p class="mt-2 text-sm text-gray-600">Sourcing, evaluación y posicionamiento de productos tecnológicos con ventaja competitiva.</p>
         </div>
 
-        <div class="rounded-2xl border border-gray-200 p-6 hover:shadow-soft transition">
-          <div class="h-40 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center">
-            <img src="/assets/industrial-grid.svg" alt="Energía Inteligente" class="w-full h-full object-cover">
+        <!-- Visual / Hero -->
+        <div class="glass rounded-3xl p-1 sm:p-6 flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-4 px-4 pt-2">
+            <span class="text-xs font-semibold tracking-[0.25em] text-slate-400">
+              DASHBOARD ENERGÍA
+            </span>
+            <span class="text-[11px] text-slate-500">Tiempo real · Alta demanda</span>
           </div>
-          <h3 class="mt-4 font-semibold text-lg">Energía Inteligente</h3>
-          <p class="mt-2 text-sm text-gray-600">Compensación de pérdidas eléctricas y optimización del consumo en planta.</p>
-        </div>
 
-        <div class="rounded-2xl border border-gray-200 p-6 hover:shadow-soft transition">
-          <div class="h-40 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center">
-            <img src="/assets/industrial-grid.svg" alt="Consultoría Tecnológica" class="w-full h-full object-cover">
+          <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-700/60">
+            <img
+              src="hero-bg.svg"
+              alt="Visual industrial"
+              class="w-full h-56 sm:h-64 object-cover opacity-90"
+            />
+
+            <!-- Overlay datos -->
+            <div class="absolute inset-0 p-4 flex flex-col justify-between">
+              <div class="flex gap-2">
+                <div class="bg-black/60 border border-slate-700 rounded-xl px-3 py-2">
+                  <p class="text-[11px] text-slate-400">Ahorro proyectado</p>
+                  <p class="text-sm font-semibold text-emerald-300">18–25 %</p>
+                </div>
+                <div class="bg-black/55 border border-slate-700 rounded-xl px-3 py-2">
+                  <p class="text-[11px] text-slate-400">Disponibilidad</p>
+                  <p class="text-sm font-semibold text-sky-300">99.3 %</p>
+                </div>
+              </div>
+
+              <div class="bg-black/70 border border-slate-700 rounded-xl px-3 py-2 flex items-center justify-between">
+                <div>
+                  <p class="text-[11px] text-slate-400">Plantas conectadas</p>
+                  <p class="text-sm font-semibold text-slate-50">Industria, logística y retail</p>
+                </div>
+                <span class="text-[11px] text-emerald-300">
+                  IA &amp; monitoreo continuo
+                </span>
+              </div>
+            </div>
           </div>
-          <h3 class="mt-4 font-semibold text-lg">Consultoría Tecnológica</h3>
-          <p class="mt-2 text-sm text-gray-600">Automatización, IA aplicada y digitalización end-to-end con foco en ROI.</p>
+
+          <p class="mt-4 text-[11px] text-slate-400 px-2">
+            Integramos sensores, analítica y modelos de IA para anticipar fallas,
+            optimizar el consumo de energía y extender la vida útil de tus equipos.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="presencia" class="bg-steel">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl font-bold">Presencia</h2>
-      <p class="text-gray-300 mt-2">Florida (EE.UU.), Hidalgo (TX) y Monterrey (NL).</p>
-    </div>
-  </section>
+    <!-- NUESTRAS DIVISIONES -->
+    <section id="divisiones" class="section-light border-t border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="text-center mb-10">
+          <p class="text-xs font-semibold tracking-[0.25em] text-primary mb-3">
+            NUESTRAS DIVISIONES
+          </p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-50 mb-2">
+            Integramos IA, automatización y estrategia comercial
+          </h2>
+          <p class="text-sm text-slate-300 max-w-2xl mx-auto">
+            Acompañamos a la industria desde la selección de tecnología,
+            hasta la implementación y escalamiento con foco en resultados.
+          </p>
+        </div>
 
-  <section id="contacto" class="bg-white text-ink">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="rounded-2xl border border-gray-200 p-8">
-        <h2 class="text-2xl font-bold">¿Listo para acelerar tu operación?</h2>
-        <p class="text-titan mt-2">Escríbenos y agenda una conversación con nuestro equipo.</p>
-        <div class="mt-6">
-          <a href="mailto:info@gbestproducts.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-ink font-semibold hover:brightness-110">
-            Contactar por e-mail
-          </a>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Comercialización Global -->
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-10 w-10 rounded-2xl bg-primary/10 flex items-center justify-center">
+                <span class="text-lg">🌐</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-50">
+                Comercialización Global
+              </h3>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4">
+              Sourcing, evaluación y posicionamiento de productos tecnológicos
+              con ventaja competitiva en mercados de alto potencial.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1 mb-4">
+              <li>• Búsqueda y validación de fabricantes internacionales.</li>
+              <li>• Análisis de demanda, pricing y regulaciones clave.</li>
+              <li>• Estrategia de entrada y crecimiento por etapas.</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+              Casos en salud, consumo y soluciones para industria ligera.
+            </div>
+          </article>
+
+          <!-- Energía Inteligente -->
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-10 w-10 rounded-2xl bg-emerald-400/10 flex items-center justify-center">
+                <span class="text-lg">⚡</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-50">
+                Energía Inteligente
+              </h3>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4">
+              Sistemas de compensación de pérdidas eléctricas, monitoreo y
+              optimización del consumo en plantas industriales y centros logísticos.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1 mb-4">
+              <li>• Diagnóstico de calidad de energía y mapa de riesgos.</li>
+              <li>• Equipos de compensación y optimización de carga.</li>
+              <li>• Reportes energéticos y KPIs para dirección.</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+              Diseñado para reducir costos, paros por mantenimiento y estrés térmico de los equipos.
+            </div>
+          </article>
+
+          <!-- Consultoría Tecnológica -->
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-10 w-10 rounded-2xl bg-sky-400/10 flex items-center justify-center">
+                <span class="text-lg">📊</span>
+              </div>
+              <h3 class="text-base font-semibold text-slate-50">
+                Consultoría Tecnológica
+              </h3>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4">
+              Acompañamiento end-to-end para seleccionar, integrar y operar
+              soluciones tecnológicas con retorno claro para el negocio.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1 mb-4">
+              <li>• Roadmap de digitalización y automatización.</li>
+              <li>• Integración de datos, sensores y plataformas.</li>
+              <li>• Alineación entre operación, finanzas y dirección.</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+              Ideal para organizaciones que requieren gobernanza y foco en ROI.
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="bg-steel border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-gray-400 text-sm">
-      © 2025 Global Best Products LLC. Todos los derechos reservados.
+    <!-- PRESENCIA -->
+    <section id="presencia" class="border-t border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid gap-8 md:grid-cols-[1.2fr_minmax(0,1fr)] items-center">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.25em] text-primary mb-3">
+              PRESENCIA BINACIONAL
+            </p>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-50 mb-3">
+              Operamos donde la industria necesita continuidad
+            </h2>
+            <p class="text-sm text-slate-300 mb-4">
+              Global Best Products LLC estructura sus operaciones entre Estados Unidos y México
+              para combinar cercanía con el cliente, tiempos de respuesta y acceso a
+              proveedores tecnológicos globales.
+            </p>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+              <li>• Oficinas y operaciones en Florida (USA), Hidalgo (TX) y Monterrey (NL).</li>
+              <li>• Red de aliados técnicos y fabricantes especializados.</li>
+              <li>• Enfoque en segmentos industriales, logísticos y de servicios críticos.</li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+            <img
+              src="industrial-grid.svg"
+              alt="Mapa y presencia industrial"
+              class="w-full h-40 object-contain opacity-90 mb-4"
+            />
+            <p class="text-[11px] text-slate-400">
+              Combinamos experiencia local con alcance global para seleccionar tecnologías,
+              estructurar proyectos y acompañar la implementación de forma directa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS (placeholder ligero) -->
+    <section id="casos" class="section-light border-t border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.25em] text-primary mb-3">
+              CASOS Y APLICACIONES
+            </p>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-50 mb-2">
+              Proyectos enfocados en resultados medibles
+            </h2>
+            <p class="text-sm text-slate-300 max-w-xl">
+              Adaptamos cada solución al contexto operativo del cliente
+              y priorizamos indicadores de negocio: ahorro, continuidad y reducción de riesgo.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3 text-xs text-slate-300">
+          <div class="glass rounded-2xl p-4">
+            <p class="font-semibold text-slate-50 mb-1">Planta de manufactura</p>
+            <p class="text-slate-400 mb-2">Optimización de consumo y reducción de paros.</p>
+            <p class="text-slate-400">Ahorro energético incremental con foco en disponibilidad.</p>
+          </div>
+          <div class="glass rounded-2xl p-4">
+            <p class="font-semibold text-slate-50 mb-1">Centro logístico</p>
+            <p class="text-slate-400 mb-2">Monitoreo de cargas críticas y calidad de energía.</p>
+            <p class="text-slate-400">Menos fallas inesperadas y plan de mantenimiento proactivo.</p>
+          </div>
+          <div class="glass rounded-2xl p-4">
+            <p class="font-semibold text-slate-50 mb-1">Retail &amp; servicios</p>
+            <p class="text-slate-400 mb-2">Selección de equipos y proveedores tecnológicos.</p>
+            <p class="text-slate-400">Enfoque en experiencia del cliente y eficiencia operativa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="border-t border-slate-800/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="glass rounded-3xl p-6 sm:p-8">
+          <div class="mb-6">
+            <p class="text-xs font-semibold tracking-[0.25em] text-primary mb-3">
+              CONTACTO
+            </p>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-50 mb-2">
+              Conversemos sobre tu próximo proyecto
+            </h2>
+            <p class="text-sm text-slate-300">
+              Cuéntanos brevemente tu reto en energía, automatización o comercialización
+              y te proponemos un siguiente paso claro: diagnóstico, piloto o diseño de solución.
+            </p>
+          </div>
+
+          <form
+            class="grid gap-4 sm:grid-cols-2 text-sm"
+            action="mailto:info@gbestproducts.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="sm:col-span-1">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                required
+                class="w-full rounded-xl bg-slate-900/80 border border-slate-700 px-3 py-2 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-primary/70"
+              />
+            </div>
+
+            <div class="sm:col-span-1">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Correo</label>
+              <input
+                type="email"
+                name="correo"
+                required
+                class="w-full rounded-xl bg-slate-900/80 border border-slate-700 px-3 py-2 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-primary/70"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Empresa / Proyecto</label>
+              <input
+                type="text"
+                name="empresa"
+                class="w-full rounded-xl bg-slate-900/80 border border-slate-700 px-3 py-2 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-primary/70"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Mensaje</label>
+              <textarea
+                name="mensaje"
+                rows="4"
+                class="w-full rounded-xl bg-slate-900/80 border border-slate-700 px-3 py-2 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-primary/70"
+              ></textarea>
+            </div>
+
+            <div class="sm:col-span-2 flex justify-between items-center gap-4">
+              <button
+                type="submit"
+                class="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-xs sm:text-sm font-semibold text-titan shadow-lg shadow-yellow-900/40 hover:bg-yellow-400 transition"
+              >
+                Enviar mensaje
+              </button>
+              <p class="hidden sm:block text-[11px] text-slate-400">
+                También puedes escribirnos directamente a
+                <span class="text-slate-200 font-semibold"> info@gbestproducts.com</span>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-black/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+      <p>© 2025 Global Best Products LLC. All rights reserved.</p>
+      <p>Florida · Hidalgo (TX) · Monterrey (NL)</p>
     </div>
   </footer>
+
+  <!-- Scroll suave para anclas -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
