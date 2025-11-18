@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <radialGradient id="rg1" cx="75%" cy="25%" r="60%">
+      <stop offset="0" stop-color="#B98D2D" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#0B1420" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg2" cx="10%" cy="85%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#0B1420" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="600" fill="#0E1726"/>
+  <rect width="1200" height="600" fill="url(#rg1)"/>
+  <rect width="1200" height="600" fill="url(#rg2)"/>
+  <g opacity=".25" stroke="#9CA3AF">
+    <path d="M50 500 Q 200 420 350 500 T 650 500 T 950 500" fill="none"/>
+    <path d="M50 540 Q 200 460 350 540 T 650 540 T 950 540" fill="none"/>
+    <path d="M50 460 Q 200 380 350 460 T 650 460 T 950 460" fill="none"/>
+  </g>
+</svg>
